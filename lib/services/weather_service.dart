@@ -9,10 +9,10 @@ class WeatherService {
   Future<WeatherModel> getWeather(String city) async {
     try {
       Response response =
-          await dio.get('${baseUrl}forecast.json?key=$apiKey&q=London&days=1');
+          await dio.get('${baseUrl}forecast.json?key=$apiKey&q=$city&days=1');
       return WeatherModel.fromJson(response.data);
     } on DioException catch (e) {
-      final String errMessage = e.response?.data[''][''] ?? 'try again ';
+      final String errMessage = e.response?.data[''] ?? 'try again ';
       throw Exception(errMessage);
     }catch (e) {
       throw Exception(e.toString());

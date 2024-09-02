@@ -2,32 +2,32 @@ import 'condition.dart';
 
 class Current {
 	int? lastUpdatedEpoch;
-	String? lastUpdated;
+	DateTime? lastUpdated;
 	double? tempC;
-	int? tempF;
+	double? tempF;
 	int? isDay;
 	Condition? condition;
 	double? windMph;
-	int? windKph;
+	double? windKph;
 	int? windDegree;
 	String? windDir;
-	int? pressureMb;
+	double? pressureMb;
 	double? pressureIn;
-	int? precipMm;
-	int? precipIn;
+	double? precipMm;
+	double? precipIn;
 	int? humidity;
 	int? cloud;
 	double? feelslikeC;
-	int? feelslikeF;
+	double? feelslikeF;
 	double? windchillC;
 	double? windchillF;
 	double? heatindexC;
 	double? heatindexF;
 	double? dewpointC;
 	double? dewpointF;
-	int? visKm;
-	int? visMiles;
-	int? uv;
+	double? visKm;
+	double? visMiles;
+	double? uv;
 	double? gustMph;
 	double? gustKph;
 
@@ -65,34 +65,34 @@ class Current {
 
 	factory Current.fromJson(Map<String, dynamic> json) => Current(
 				lastUpdatedEpoch: json['last_updated_epoch'] as int?,
-				lastUpdated: json['last_updated'] as String?,
+				lastUpdated: DateTime.parse(json['last_updated'] as String),
 				tempC: (json['temp_c'] as num?)?.toDouble(),
-				tempF: json['temp_f'] as int?,
+				tempF: json['temp_f'] as double?,
 				isDay: json['is_day'] as int?,
 				condition: json['condition'] == null
 						? null
 						: Condition.fromJson(json['condition'] as Map<String, dynamic>),
 				windMph: (json['wind_mph'] as num?)?.toDouble(),
-				windKph: json['wind_kph'] as int?,
+				windKph: json['wind_kph'] as double?,
 				windDegree: json['wind_degree'] as int?,
 				windDir: json['wind_dir'] as String?,
-				pressureMb: json['pressure_mb'] as int?,
+				pressureMb: json['pressure_mb'] as double?,
 				pressureIn: (json['pressure_in'] as num?)?.toDouble(),
-				precipMm: json['precip_mm'] as int?,
-				precipIn: json['precip_in'] as int?,
+				precipMm: json['precip_mm'] as double?,
+				precipIn: json['precip_in'] as double?,
 				humidity: json['humidity'] as int?,
 				cloud: json['cloud'] as int?,
 				feelslikeC: (json['feelslike_c'] as num?)?.toDouble(),
-				feelslikeF: json['feelslike_f'] as int?,
+				feelslikeF: json['feelslike_f'] as double?,
 				windchillC: (json['windchill_c'] as num?)?.toDouble(),
 				windchillF: (json['windchill_f'] as num?)?.toDouble(),
 				heatindexC: (json['heatindex_c'] as num?)?.toDouble(),
 				heatindexF: (json['heatindex_f'] as num?)?.toDouble(),
 				dewpointC: (json['dewpoint_c'] as num?)?.toDouble(),
 				dewpointF: (json['dewpoint_f'] as num?)?.toDouble(),
-				visKm: json['vis_km'] as int?,
-				visMiles: json['vis_miles'] as int?,
-				uv: json['uv'] as int?,
+				visKm: json['vis_km'] as double?,
+				visMiles: json['vis_miles'] as double?,
+				uv: json['uv'] as double?,
 				gustMph: (json['gust_mph'] as num?)?.toDouble(),
 				gustKph: (json['gust_kph'] as num?)?.toDouble(),
 			);

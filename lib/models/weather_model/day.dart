@@ -6,21 +6,21 @@ class Day {
 	double? mintempC;
 	double? mintempF;
 	double? avgtempC;
-	int? avgtempF;
+	double? avgtempF;
 	double? maxwindMph;
 	double? maxwindKph;
 	double? totalprecipMm;
 	double? totalprecipIn;
-	int? totalsnowCm;
+	double? totalsnowCm;
 	double? avgvisKm;
-	int? avgvisMiles;
+	double? avgvisMiles;
 	int? avghumidity;
 	int? dailyWillItRain;
 	int? dailyChanceOfRain;
 	int? dailyWillItSnow;
 	int? dailyChanceOfSnow;
 	Condition? condition;
-	int? uv;
+	double? uv;
 
 	Day({
 		this.maxtempC, 
@@ -51,14 +51,14 @@ class Day {
 				mintempC: (json['mintemp_c'] as num?)?.toDouble(),
 				mintempF: (json['mintemp_f'] as num?)?.toDouble(),
 				avgtempC: (json['avgtemp_c'] as num?)?.toDouble(),
-				avgtempF: json['avgtemp_f'] as int?,
+				avgtempF: json['avgtemp_f'] as double?,
 				maxwindMph: (json['maxwind_mph'] as num?)?.toDouble(),
 				maxwindKph: (json['maxwind_kph'] as num?)?.toDouble(),
 				totalprecipMm: (json['totalprecip_mm'] as num?)?.toDouble(),
 				totalprecipIn: (json['totalprecip_in'] as num?)?.toDouble(),
-				totalsnowCm: json['totalsnow_cm'] as int?,
+				totalsnowCm: json['totalsnow_cm'] as double?,
 				avgvisKm: (json['avgvis_km'] as num?)?.toDouble(),
-				avgvisMiles: json['avgvis_miles'] as int?,
+				avgvisMiles: json['avgvis_miles'] as double?,
 				avghumidity: json['avghumidity'] as int?,
 				dailyWillItRain: json['daily_will_it_rain'] as int?,
 				dailyChanceOfRain: json['daily_chance_of_rain'] as int?,
@@ -67,7 +67,7 @@ class Day {
 				condition: json['condition'] == null
 						? null
 						: Condition.fromJson(json['condition'] as Map<String, dynamic>),
-				uv: json['uv'] as int?,
+				uv: json['uv'] as double?,
 			);
 
 	Map<String, dynamic> toJson() => {

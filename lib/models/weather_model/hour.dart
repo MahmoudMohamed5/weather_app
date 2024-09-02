@@ -1,23 +1,23 @@
 import 'condition.dart';
 
 class Hour {
-	int? timeEpoch;
+	num? timeEpoch;
 	String? time;
 	double? tempC;
 	double? tempF;
-	int? isDay;
+	num? isDay;
 	Condition? condition;
 	double? windMph;
 	double? windKph;
-	int? windDegree;
+	num? windDegree;
 	String? windDir;
-	int? pressureMb;
+	double? pressureMb;
 	double? pressureIn;
 	double? precipMm;
 	double? precipIn;
-	int? snowCm;
-	int? humidity;
-	int? cloud;
+	double? snowCm;
+	num? humidity;
+	num? cloud;
 	double? feelslikeC;
 	double? feelslikeF;
 	double? windchillC;
@@ -26,15 +26,15 @@ class Hour {
 	double? heatindexF;
 	double? dewpointC;
 	double? dewpointF;
-	int? willItRain;
-	int? chanceOfRain;
-	int? willItSnow;
-	int? chanceOfSnow;
-	int? visKm;
-	int? visMiles;
+	num? willItRain;
+	num? chanceOfRain;
+	num? willItSnow;
+	num? chanceOfSnow;
+	double? visKm;
+	double? visMiles;
 	double? gustMph;
 	double? gustKph;
-	int? uv;
+	num? uv;
 	double? shortRad;
 	double? diffRad;
 
@@ -78,25 +78,25 @@ class Hour {
 	});
 
 	factory Hour.fromJson(Map<String, dynamic> json) => Hour(
-				timeEpoch: json['time_epoch'] as int?,
+				timeEpoch: json['time_epoch'] as num?,
 				time: json['time'] as String?,
 				tempC: (json['temp_c'] as num?)?.toDouble(),
 				tempF: (json['temp_f'] as num?)?.toDouble(),
-				isDay: json['is_day'] as int?,
+				isDay: json['is_day'] as num?,
 				condition: json['condition'] == null
 						? null
 						: Condition.fromJson(json['condition'] as Map<String, dynamic>),
 				windMph: (json['wind_mph'] as num?)?.toDouble(),
 				windKph: (json['wind_kph'] as num?)?.toDouble(),
-				windDegree: json['wind_degree'] as int?,
+				windDegree: json['wind_degree'] as num?,
 				windDir: json['wind_dir'] as String?,
-				pressureMb: json['pressure_mb'] as int?,
+				pressureMb: json['pressure_mb'] as double?,
 				pressureIn: (json['pressure_in'] as num?)?.toDouble(),
 				precipMm: (json['precip_mm'] as num?)?.toDouble(),
 				precipIn: (json['precip_in'] as num?)?.toDouble(),
-				snowCm: json['snow_cm'] as int?,
-				humidity: json['humidity'] as int?,
-				cloud: json['cloud'] as int?,
+				snowCm: json['snow_cm'] as double?,
+				humidity: json['humidity'] as num?,
+				cloud: json['cloud'] as num?,
 				feelslikeC: (json['feelslike_c'] as num?)?.toDouble(),
 				feelslikeF: (json['feelslike_f'] as num?)?.toDouble(),
 				windchillC: (json['windchill_c'] as num?)?.toDouble(),
@@ -105,15 +105,15 @@ class Hour {
 				heatindexF: (json['heatindex_f'] as num?)?.toDouble(),
 				dewpointC: (json['dewpoint_c'] as num?)?.toDouble(),
 				dewpointF: (json['dewpoint_f'] as num?)?.toDouble(),
-				willItRain: json['will_it_rain'] as int?,
-				chanceOfRain: json['chance_of_rain'] as int?,
-				willItSnow: json['will_it_snow'] as int?,
-				chanceOfSnow: json['chance_of_snow'] as int?,
-				visKm: json['vis_km'] as int?,
-				visMiles: json['vis_miles'] as int?,
+				willItRain: json['will_it_rain'] as num?,
+				chanceOfRain: json['chance_of_rain'] as num?,
+				willItSnow: json['will_it_snow'] as num?,
+				chanceOfSnow: json['chance_of_snow'] as num?,
+				visKm: json['vis_km'] as double?,
+				visMiles: json['vis_miles'] as double?,
 				gustMph: (json['gust_mph'] as num?)?.toDouble(),
 				gustKph: (json['gust_kph'] as num?)?.toDouble(),
-				uv: json['uv'] as int?,
+				uv: json['uv'] as num?,
 				shortRad: (json['short_rad'] as num?)?.toDouble(),
 				diffRad: (json['diff_rad'] as num?)?.toDouble(),
 			);
